@@ -354,8 +354,7 @@
 	<!--- http://www.lucee.nl/post.cfm/railo-tip-get-a-query-s-columnlist-case-sensitive --->
 	<cffunction name="getQueryColumnList" returntype="string" output="no">
 		<cfargument name="q" type="query" required="yes" />
-		<cfif (structKeyExists(server, "railo") or structKeyExists(server, "lucee"))
-				and structKeyExists(arguments.q, "getColumnList")>
+		<cfif (structKeyExists(server, "railo") or structKeyExists(server, "lucee"))>
 			<cfreturn arguments.q.getColumnlist(false) />
 		<cfelse>
 			<cfreturn arguments.q.columnlist />
